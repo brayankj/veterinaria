@@ -1,0 +1,64 @@
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+
+    button{
+        border-radius: 15px;
+        border: 2px solid var(--PINK);
+        padding: 10px;
+        background: transparent;
+        color: var(--PINK);
+    } 
+}
+
+.register{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    h3{
+        font-size: 3.5rem;
+        font-family: var(--DM);
+        color: var(--darkBlue);
+    }
+
+    form{
+        .validate{
+            font-size: 11px;
+            margin-bottom: 0;
+        }
+        .form-group{
+            margin-bottom: 0px;
+        }
+        label{
+            color: var(--darkBlue);
+            font-size: 14px;
+            padding: 10px;
+            margin: 8px 0 0 0 ;
+        }
+        input{
+            border-radius: 20px;
+            background: var(--GREENLIGHT);
+            border: none;
+            text-align: center;
+        }
+        button{
+            border-radius: 15px;
+            border: none;
+            height: 35px;
+            background: var(--PINK);
+            color: var(--white);
+            width: 160px;
+        }
+        .terms{
+            display: flex;
+            align-items: center
+        }
+        .form-check{
+            margin: 15px;
+        }
+    }
+}

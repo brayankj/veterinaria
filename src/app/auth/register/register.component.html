@@ -1,0 +1,67 @@
+<div class="container login">
+    <h3>Pets</h3>
+    <button [routerLink]="['/login']" >Tengo una cuenta</button>
+</div>
+
+<section class="container">
+    <div class="row my-4 register">
+        <div class="col-md-6 text-center">
+            <h3>My Little Pet</h3>
+            <img src="../../../assets/imgs/register.png" alt="register.png">
+        </div>
+        <div class="col-md-6">
+            <form (ngSubmit)="createUser()" autocomplete="off" [formGroup]="registerForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="names">Nombres: </label>
+                      <input formControlName="names" type="text" class="form-control" id="names" placeholder="Example Karen">
+                      <p class="validate text-danger" *ngIf="validateFields('names')">El nombre es obligatorio</p>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="lastnames">Apellidos: </label>
+                      <input formControlName="lastnames" type="text" class="form-control" id="lastnames" placeholder="Example Torres">
+                      <p class="validate text-danger" *ngIf="validateFields('lastnames')">El apellido es obligatorio</p>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="years">Edad</label>
+                      <input formControlName="years" type="number" class="form-control" id="years" placeholder="20">
+                      <p class="validate text-danger" *ngIf="validateyears('years')">La edad es obligatoria y debes ser mayor de edad</p>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <div class="form-group">
+                            <label for="Email">Correo Electronico</label>
+                            <input formControlName="email" type="email" class="form-control" id="Email" placeholder="karentorres@gmail.com">
+                            <p class="validate text-danger" *ngIf="validateFields('email')">El correo electronico es obligatorio y debe ser valido</p>
+                          </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="passwordOne">Contraseña</label>
+                    <input formControlName="password" type="password" class="form-control" id="passwordOne" placeholder="Contraseña">
+                    <p class="validate text-danger" *ngIf="validateLengthPass('password')">Las contraseña debe contener al menos 8 caracteres</p>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="passwordTwo">Confirmar Contraseña</label>
+                    <input formControlName="passConfirm" type="password" class="form-control" id="passwordTwo" placeholder="Contraseña">
+                    <p class="validate text-danger" *ngIf="validateLengthPass('passConfirm')">Las contraseña debe contener al menos 8 caracteres</p>
+                  </div>
+                  <p class="validate text-danger" *ngIf="validatePasswords()">Las contraseña es obligatoria y deben ser iguales</p>
+                </div>
+                
+                <div class="form-check">
+                    <input formControlName="terms" class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Aceptó términos y condiciones
+                    </label>
+                    <p class="validate text-danger" *ngIf="validateTerms()">Los términos & condiciones de uso son obligatorios</p>
+                </div>
+                <button  class="btn">Crear cuenta</button>
+              </form>
+        </div>
+    </div>
+</section>
+
+<app-footer-auth></app-footer-auth>

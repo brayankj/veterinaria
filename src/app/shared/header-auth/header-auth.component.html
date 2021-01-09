@@ -1,0 +1,51 @@
+<section class="container">
+    <div class="row my-4 Header">
+        <div class="col-md-6 my-3 Header-info">
+            <h1>My Little Pet</h1>
+            <p>Cuidados y cariños para tus mascotas, por unas patitas felices</p>
+            <p><span> Te apasiona el cuidado de tu mascota, crea una cuenta y ten acceso a el sistema de consultas. </span></p>
+            <button [routerLink]="['/register']" >Crear Cuenta</button>
+        </div>
+        <div class="col-md-6 my-3">
+            <div class="Header-imgs">
+                <img src="../../../assets/imgs/userAndDog.png" alt="Dog.png">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#cfe0d99d" d="M41.1,-62.6C54.4,-55.3,67.1,-45.9,73.5,-33.2C79.9,-20.5,79.9,-4.5,73.4,7.5C66.9,19.5,53.9,27.4,43.9,36.8C33.9,46.2,26.9,57.1,16.6,63.2C6.3,69.3,-7.4,70.6,-19.8,67.1C-32.2,63.7,-43.4,55.4,-55.5,45.7C-67.6,36,-80.6,24.7,-85.7,10.4C-90.7,-3.9,-87.8,-21.3,-77.2,-31.3C-66.5,-41.3,-48.2,-43.9,-34.1,-50.9C-19.9,-57.8,-10,-69.1,1.9,-72.1C13.9,-75.2,27.7,-70,41.1,-62.6Z" transform="translate(100 100)" />
+                  </svg>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row my-4 cards">
+        <div class="col-12 col-md-3" *ngFor="let item of card">
+            <div class="card">
+                <img class="card-img" src="{{ item.img }}" alt="Seguridad.png">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <p>{{ item.text }}</p>
+                </div>
+              </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row my-4 moreInfo">
+        <div class="col-12 col-md-6 text-center">
+            <img src="../../../assets//imgs//people-on-computer.png" alt="people-on-computer.png">
+        </div>
+        <div class="col-12 col-md-6">
+            <p>Registrate para acceder a más información, conoce todos nuestros tratamientos y equipos de médicos que están disponibles para el cuidado y estética de tu mascota.</p>
+            <p>Horario de servicio es de 10:00 a 16:00 hrs de Lunes a Viernes </p>
+            <p>Consultas de emergencias o directas a domicilio para clientes platino </p>
+            <ul>
+                <li *ngFor="let item of uls">
+                    <img src="{{ item.icon }}" alt="{{ item.name }}">
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

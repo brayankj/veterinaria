@@ -1,0 +1,25 @@
+.login{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+
+    button{
+        border-radius: 15px;
+        border: 2px solid var(--PINK);
+        padding: 10px;
+        background: transparent;
+        color: var(--PINK);
+    } 
+
+}
+
+#loginModal{
+    padding-right: 0;
+    .modal-body{
+        img{
+            max-height: 200px;
+        }
+    }
+}
