@@ -1,0 +1,42 @@
+.topMenu{
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    img{
+        border-radius:50%
+    }
+    button{
+        border-radius: 50%;
+        border: 2px solid var(--PINK);
+        background: transparent;
+        color: var(--PINK);
+        padding: 8px;
+    }
+    .dropdown-menu{
+        background: var(--PINK);
+        min-width: 220px;
+        margin-top: 8px;
+        p,a{
+            color: var(--white);
+        }
+        a:hover{
+            background: var(--PINK);
+            color: var(--white);
+            cursor: pointer;
+        }
+    }
+    form{ min-width: 240px; 
+        margin-left: 10px 
+    }
+    input{
+        border: 1px solid var(--PINK);
+        border-radius: 15px;
+        text-align: center;
+        opacity: .8;
+        outline: none !important;
+        min-height: 35px;
+        width: 100%;
+    }
+}

@@ -13,21 +13,37 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">Pets </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button #closebutton  type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
+          <h4 class="text-center">Iniciar Sesión</h4>
           <img src="../../../assets/imgs/Penguin.svg" alt="Penguin.svg">
-          <form>
-              <button>Google</button>
-            <div class="form-group">
-              <label for="formGroupExampleInput">Correo electronico</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+          <form (ngSubmit)="loginUser()" autocomplete="off" [formGroup]="loginForm">
+            <p data-dismiss="modal" aria-label="Close" class="text-center notAccount" [routerLink]="['/register']" >¿ No tienes una ceunta ?</p>
+            <div id="MyBottonGoogle" class="google">
+              <img src="../../../assets/imgs/google.png" alt="icon-google">
+              <p>Iniciar con google</p>
             </div>
             <div class="form-group">
-              <label for="formGroupExampleInput2">Contraseña</label>
-              <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+              <label for="emailLogin">Correo electronico</label>
+              <input formControlName="email"  type="email" class="form-control" id="emailLogin" placeholder="micorreo@gmail.com">
+              <p class="validate text-danger" *ngIf="validateFields('email')">El correo electronico es obligatorio y debe ser valido</p>
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input autocomplete="nope" formControlName="password" type="password" class="form-control" id="password" placeholder="Contraseña">
+              <p class="validate text-danger" *ngIf="validateFields('password')">La contraseña es obligatoria</p>
+            </div>
+            <div class="form-check">
+              <input formControlName="remember" class="form-check-input" type="checkbox" id="remember">
+              <label class="form-check-label" for="remember">
+                Recordar mi correo
+              </label>
+            </div>
+            <div class="loginBtn">
+              <button class="btn">Acceder</button>
             </div>
           </form>
         </div>

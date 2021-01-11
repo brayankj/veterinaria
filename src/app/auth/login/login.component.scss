@@ -19,7 +19,72 @@
     padding-right: 0;
     .modal-body{
         img{
-            max-height: 200px;
+            max-height: 160px;
+        }
+    }
+    .google{
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        p{
+            font-size: 11px;
+            padding: 0 10px;
+            margin-bottom: 0;
+        }
+    }
+    .notAccount{
+        color: var(--darkBlue);
+        cursor: pointer;
+        font-size: 12px;
+        outline:none !important;
+    }
+    .google{
+        img{
+            width: 35px;
+        }
+    }
+    form{
+        .validate{
+            font-size: 11px;
+            margin-bottom: 0;
+        }
+        .form-group{
+            margin-bottom: 0px;
+        }
+        label{
+            color: var(--darkBlue);
+            font-size: 14px;
+            padding: 10px;
+            margin: 8px 0 0 0 ;
+        }
+        input{
+            border-radius: 20px;
+            background: var(--GREENLIGHT);
+            border: none;
+            text-align: center;
+        }
+        button{
+            border-radius: 15px;
+            border: none;
+            height: 35px;
+            background: var(--PINK);
+            color: var(--white);
+            width: 160px;
+        }
+        .form-check{
+            margin-top: 20px;
+            label{
+                padding-top: 0px;
+                margin-top: 0px;
+            }
+        }
+        .loginBtn{
+            text-align: center;
+            margin: 15px;
+            button{
+                margin-top: 10px;
+            }
         }
     }
 }

@@ -1,0 +1,27 @@
+.bottonMenu{
+    
+    bottom: 0;
+    background: var(--white);
+    position: fixed;
+    ul{ 
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 16px 0;
+    }
+    ul li{
+        
+        border: 2px solid var(--darkBlue);
+        border-radius: 50%;
+        display: inline-block;
+        list-style: none;
+
+        img{
+            padding: 8px;
+            width: 50px;
+        }
+    }
+    ul li:hover{
+        border:2px solid var(--PINK);
+    }
+}

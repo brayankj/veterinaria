@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenService } from './inteceptors/token.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
@@ -21,7 +23,13 @@ import { NotPageComponent } from './not-page/not-page.component';
     AuthModule,
     PagesModule,
   ],
-  providers: [],
+  providers: [
+    /*{ 
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenService,
+      multi: true
+    }*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
