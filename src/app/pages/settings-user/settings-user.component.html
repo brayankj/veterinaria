@@ -1,1 +1,52 @@
-<p>settings-user works!</p>
+
+
+<section class="container">
+    <div class="row Perfil">
+
+        <div class="col-md-6 text-center">
+            <div class="card">
+              <h4>Avatar</h4>
+              <h6>Imagen del Usuario</h6>
+              <img *ngIf="!imgTemp" [src]="user.viewImageUrl" alt="">
+              <img *ngIf="imgTemp" [src]="imgTemp" alt="">
+              <div class="my-3">
+                <label for="carga"><img class="imgView" src="../../../assets/imgs/carga.png" alt=""></label>
+                <p>Ver imagenes</p>
+                <input id="carga" names="carga" type="file" (change)="changeImage($event.target.files[0])" >
+              </div>
+              <button [disabled]="!imageUpload" (click)="UpdateImage()" class="btn update">Actualizar Imagen</button>
+            </div>
+        </div>
+
+        <div class="col-md-6 my-4">
+          <h4 class="text-center">Actualizar Información</h4>
+            <form (ngSubmit)="updateUser()" autocomplete="off" [formGroup]="perfilForm">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Nombre</label>
+                      <input formControlName="names" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Apellido</label>
+                      <input formControlName="lastnames" type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label>Edad</label>
+                      <input formControlName="years" type="number" class="form-control">
+                    </div>
+                    <div class="form-group col-md-8">
+                        <div class="form-group">
+                            <label>Correo Electronico</label>
+                            <input formControlName="email" type="email" class="form-control" >
+                          </div>
+                          <p class="validate text-danger" *ngIf="validateFields('email')">El correo electronico ser valido</p>
+                    </div>
+                </div>
+                
+                <button [disabled]="perfilForm.invalid || user.google === true"  class="btn">Actualizar perfil</button>
+              </form>
+        </div>
+    </div>
+</section>

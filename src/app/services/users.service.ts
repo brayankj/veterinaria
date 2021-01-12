@@ -22,12 +22,25 @@ export class UsersService {
 
   public auth2:any;
   public user: User;
-  public token:string;;
   constructor(
     private http: HttpClient,
     private _router: Router,
     private _ngZone: NgZone,
-  ) { this.googleInit()  }
+  ) { 
+    this.googleInit();
+    console.log(this.user);
+  }
+
+  
+  public get token() : string {
+    return localStorage.getItem( 'token' ) || '';
+  }
+  
+  
+  public get id() : string {
+    return this.user.id || '';
+  }
+  
 
   googleInit(){
     return new Promise( resolve => {
@@ -43,15 +56,16 @@ export class UsersService {
   }
 
   validateToken(){
-    const token = localStorage.getItem( 'token' );
     return this.http.get( `${baseUrl}/auth/newToken`, {
       headers: {
-        'token': token
+        'token': this.token
       }
     } ).pipe(
       map( (res: any) => {
+        console.log(res);
         const { names, email, lastnames, active, years, image, google, role, id } = res.user;
         this.user = new User(names, email, '', lastnames, active, years, image, google, role, id);
+        console.log(this.user);
         localStorage.setItem('token', res.token);
         return true;
       }),
@@ -88,6 +102,22 @@ export class UsersService {
         } ),
         catchError( this.msgErrors ),
       ).subscribe();
+  }
+
+  updateUser( data: { email: string, names: string, lastnames: string, years, role: string} ){
+    data = { 
+      ...data,
+      role: this.user.role
+    };
+    return this.http.put( `${baseUrl}/users/${this.id}`, data, {
+      headers: {
+        'token': this.token
+      }
+    } ).pipe(
+      tap( x => console.log('data en tap: ', x) ),
+      catchError( this.msgErrors ),
+    );
+    
   }
 
   logout(){

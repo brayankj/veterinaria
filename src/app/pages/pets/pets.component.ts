@@ -13,7 +13,7 @@ export class PetsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._petsService.viewPet('5ff567ad7e7e4d4c7308e6bf').subscribe( x => console.log(x) );
+    this._petsService.viewPet('5ffccbb23584f475136796bf').subscribe( x => console.log(x) );
   }
 
 }
