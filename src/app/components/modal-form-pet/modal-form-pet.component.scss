@@ -1,0 +1,48 @@
+
+.oculto{
+    display: none;
+}
+
+.MyModalPets{
+    background-color: rgba(0,0,0,.4);
+    left: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    
+
+    .modal-content{
+        background-color: var(--darkBlue) !important;
+        .modal-header{
+            border-bottom: 0 !important;
+            h5{
+                color: var(--white);
+                font-family: var(--DM);
+            }
+        }
+        .modal-footer{
+            border-top: 0 !important;
+            button{
+                border-radius: 15px;
+                border: 2px solid var(--white);
+            }
+            .btnOne{ color: var(--white); }
+            .btnTwo{ background: var(--white); }
+        }
+    }
+    
+    form{ 
+        padding: 10px;
+        label{ color: var(--white) ; }
+        input, textarea{
+            border: 2px solid var(--white);
+            border-radius: 15px;
+            background: transparent;
+            color: var(--white);
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

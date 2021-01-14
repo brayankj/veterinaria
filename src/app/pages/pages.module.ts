@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
+import { ComponentsModule } from '../components/components.module';
 
 import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
@@ -31,6 +32,7 @@ import { NotesComponent } from './notes/notes.component';
     FormsModule,
     RouterModule,
     SharedModule,
+    ComponentsModule,
   ]
 })
 export class PagesModule { }

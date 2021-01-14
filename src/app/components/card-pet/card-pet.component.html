@@ -1,0 +1,22 @@
+
+<div class="card cardPet">
+    <div class="actions">
+        <img (click)="deletePet(Pet.id)" src="../../../assets/imgs/trash.png" alt="">
+        <img (click)="openModal(Pet)" src="../../../assets/imgs/edit.png" alt="">
+    </div>
+    <img *ngIf="!imgTemp" src="{{ url + Pet.image }}" alt="">
+    <img *ngIf="imgTemp" [src]="imgTemp" alt="">
+    <div class="py-2">
+        <p>{{Pet.typePet}}</p>
+        <p>{{Pet.name}}</p>
+    </div>
+    <div class="uploadButtons">
+        <label for="{{Pet.id}}"><img class="imgView" src="../../../assets/imgs/carga.png" alt=""></label>
+        <button [disabled]="!imageUpload" (click)="UpdateImage(Pet.id)" class="btn update">Actualizar Imagen</button>
+        <input class="carga" id="{{Pet.id}}" type="file" (change)="changeImage($event.target.files[0])" >
+    </div>
+    
+
+    
+</div>
+

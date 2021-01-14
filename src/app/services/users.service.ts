@@ -28,7 +28,6 @@ export class UsersService {
     private _ngZone: NgZone,
   ) { 
     this.googleInit();
-    console.log(this.user);
   }
 
   
