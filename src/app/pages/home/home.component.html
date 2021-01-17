@@ -1,20 +1,60 @@
-<section class="container Pets">
+<section class="container HomePets">
     <div class="row">
-        <div class="col-12 ">
-            
-            <div class="custom-shape-divider-bottom-1610307318">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                </svg>
+        <div class="col-12 my-4 HomePets-head">
+            <div class="">
+                <h2>My Little Pet</h2>
+                <p>Hola {{user.names}}</p>
             </div>
-
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit beatae sit quam illum, ab harum vero nostrum dolorem saepe quis nesciunt alias. Est porro, ex quisquam voluptates debitis in earum!
-            Ullam voluptatum cum magni dolores iure unde nobis eligendi voluptatem quisquam reiciendis saepe cumque labore exercitationem quas vitae hic, aliquam architecto veniam asperiores adipisci? Quod cumque sit dignissimos optio consequatur!
-            Officiis, voluptate delectus laudantium at unde cum molestias dolor beatae rem numquam sunt possimus, non eligendi id quibusdam ut labore perferendis, laboriosam suscipit dolores sit blanditiis libero doloribus ipsam? Sed.
-            Eveniet natus explicabo soluta ratione culpa officiis quo nesciunt ducimus veritatis enim dolores libero vero saepe voluptate molestias nam, temporibus quasi maiores sequi itaque iusto delectus deserunt! Vitae, aliquam modi!
-            Nulla maiores, pariatur dolorem consequuntur quisquam a voluptates repellat minima! Labore dignissimos delectus eligendi ipsum fuga exercitationem quibusdam optio maiores eius, consequatur tempore expedita id pariatur beatae minus quos enim?</p>
-            
+            <div> <img [src]="user.viewImageUrl" alt="imgUser.png"> </div>
         </div>
+        <section class="col-12 HomePets-body">
+            <p>Nuestros Servicios</p>
+            <div class="row align-items-center ">
+                <div class="col-md-6 cardM">
+                    <div class="AddPet borde">
+                        <p>Agrega una mascota</p>
+                        <img src="../../../assets/imgs/dog2.png" alt="imgMascota.png">
+                        <form (ngSubmit)="cretePet()" autocomplete="off" [formGroup]="newpetForm">
+                            <div class="form-group">
+                                <input formControlName="typePet" type="text" class="form-control" placeholder="Tipo de mascota">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-8">
+                                    <input formControlName="name" type="text" class="form-control" placeholder="Nombre  mascota">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input formControlName="years" type="number" class="form-control" placeholder="1 año">
+                                </div>
+                            </div>
+                            <button [disabled]="newpetForm.invalid" class="btn"> <img src="../../../assets/imgs/cargaPet.png" alt=""> </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 cardM">
+                    <div class="viewPet borde" routerLink="../MyPet"  >
+                        <img src="../../../assets/imgs/Cat.png" width="200px" height="200px" alt="verMascotas.png">
+                        <h4>Ver mis mascotas</h4>
+                    </div>
+                </div>
+                <div class="col-md-6 cardM">
+                    <div class="viewPet borde" routerLink="../Notes"  >
+                        <img src="../../../assets/imgs/dog1.png" width="200px" height="200px" alt="verConsultas.png">
+                        <h4>Consultas & tratamientos</h4>
+                    </div>
+                </div>
+                <div class="col-md-6 cardM">
+                    <div class="infoMedic"  >
+                        <p class="text-center">Personal medico especializado</p>
+                        <img src="../../../assets/imgs/medic.png" width="320px" height="280px" alt="verConsultas.png">
+                        <p> <span>Somos un grupo de profesionales enfocados en buscar el bienestar general y la buena salud de tus mascotas, prestando todos los servicios que estas requieren, de manera amable, eficiente y considerando  en todo momento que estamos atendiendo a tu familia.</span> </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
+
+    
+    <app-search-medic class="row" ></app-search-medic>
+    
 </section>
 

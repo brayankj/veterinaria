@@ -43,12 +43,12 @@ export class CardPetComponent implements OnInit {
 
   UpdateImage( id:string ){
     if( !id ){ return; }
-    this._fileUploadService.updateImage( this.imageUpload, 'pets', id )
-      .then( );
+    this._fileUploadService.updateImage( this.imageUpload, 'pets', id ).then( );
   }
 
   deletePet( id:string ){
-    console.log(id);
+    if( !id ){ return; }
+    this._petsService.idPet.emit( id );
   }
 
   openModal( pet : Pets ){

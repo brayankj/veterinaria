@@ -78,7 +78,8 @@ export class UsersService {
         localStorage.setItem('token', res.token );
         this._ngZone.run( () => this._router.navigateByUrl('/Pets/Home') );
         return true;
-      })
+      }),
+      catchError( this.msgErrors ),
     );
   }
 
@@ -125,6 +126,19 @@ export class UsersService {
     this.auth2.signOut().then( () => {
       this._ngZone.run( () => this._router.navigateByUrl('/login'));
     })
+  }
+
+  deleteAccount( id: string ){
+    return this.http.delete( `${ baseUrl }/users/${ id }`,{
+      headers: { 'token': this.token }
+    }).pipe(
+      tap( (resp:any) => {
+        Swal.fire( { icon: 'success', title: 'Cuenta Eliminada', text: resp.msg } )
+        this.logout();
+        localStorage.removeItem('email');
+      }),
+      catchError( this.msgErrors ),
+    ).subscribe();
   }
 
   msgErrors( err: HttpErrorResponse ){

@@ -1,8 +1,8 @@
 
 <div class="card cardPet">
     <div class="actions">
-        <img (click)="deletePet(Pet.id)" src="../../../assets/imgs/trash.png" alt="">
-        <img (click)="openModal(Pet)" src="../../../assets/imgs/edit.png" alt="">
+        <img (click)="deletePet(Pet.id)" src="../../../assets/imgs/trash.png" alt="trash.png">
+        <img (click)="openModal(Pet)" src="../../../assets/imgs/edit.png" alt="edit.png">
     </div>
     <img *ngIf="!imgTemp" src="{{ url + Pet.image }}" alt="">
     <img *ngIf="imgTemp" [src]="imgTemp" alt="">
@@ -11,7 +11,7 @@
         <p>{{Pet.name}}</p>
     </div>
     <div class="uploadButtons">
-        <label for="{{Pet.id}}"><img class="imgView" src="../../../assets/imgs/carga.png" alt=""></label>
+        <label for="{{Pet.id}}"><img class="imgView" src="../../../assets/imgs/carga.png" alt="carga.png"></label>
         <button [disabled]="!imageUpload" (click)="UpdateImage(Pet.id)" class="btn update">Actualizar Imagen</button>
         <input class="carga" id="{{Pet.id}}" type="file" (change)="changeImage($event.target.files[0])" >
     </div>

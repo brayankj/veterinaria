@@ -1,0 +1,36 @@
+.SearchMedicHome{
+
+    align-items: center;
+    display: flex;
+    color: var(--darkBlue);
+    flex-direction: row;
+    justify-content: space-around;
+    p{ 
+        font-family: var(--DM);
+    }
+    input{
+        border: 1px solid var(--PINK);
+        border-radius: 15px;
+        outline: none !important;
+        min-height: 35px;
+        width: 100%;
+    }
+}
+
+.card{
+    background: #e3e6ec;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px #D1D9E6, -10px -10px 10px #fff;
+    border: none;
+    padding: 25px 0;
+    margin: 15px 0;
+    img{
+        border-radius: 50%;
+        height: 160px;
+        margin: 0 auto;
+        width: 160px;
+    }
+    p{
+        margin: 0;
+    }
+}

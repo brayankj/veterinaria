@@ -1,0 +1,26 @@
+<div class="col-12">
+    <div class="SearchMedicHome">
+        <div><p>Buscar Medicos</p></div>
+        <div>
+            <form>
+                <div class="form-group">
+                <input [formControl]="search" type="text"  class="form-control" placeholder="Buscar.." >
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6" *ngFor="let item of doctors"  >
+            <div class="card text-center">
+                <img src="{{ url + item.image }}" alt="">
+                <p>{{item.names}}</p>
+                <p>{{item.lastnames}}</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+

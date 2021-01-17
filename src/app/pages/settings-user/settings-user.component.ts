@@ -88,4 +88,22 @@ export class SettingsUserComponent implements OnInit {
     }
   }
 
+  deleteAccount( id : string ){
+    if( !id ){ return; }
+    Swal.fire({
+      title: 'ELIMINAR MI CUENTA?',
+      text: "Estas seguro(a) que deseas eliminar tu cuenta!, esta acción no es reversible y no podras ingresar de nuevo",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Borrar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._usersService.deleteAccount(id);
+      }
+    });
+    
+  }
+
 }
