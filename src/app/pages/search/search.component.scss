@@ -1,0 +1,48 @@
+.PageSearchAll{
+    margin: 30px 0 90px 0;
+    h2{ 
+        color: var(--darkBlue);
+        font-family: var(--DM);
+        width: 100%;
+    }
+    &-results{
+        width: 100%;
+        h4{
+            color: var(--darkBlue);
+        }
+        h6{ 
+            color: var(--darkBlue);
+            margin: 20px 0
+        }
+    }
+
+    .card{
+        background: #e3e6ec;
+        border-radius: 25px;
+        box-shadow: 10px 10px 10px #D1D9E6, -10px -10px 10px #fff;
+        border: none;
+        margin: 15px 0;
+        img{
+            border-radius: 50%;
+            height: 160px;
+            margin: 0 auto;
+            padding: 10px;
+            width: 160px;
+        }
+        p{
+            margin: 0;
+        }
+    }
+    .mycardNotes{
+        color: var(--darkBlue);
+        font-size: 14px;
+        padding: 15px;
+        p{ padding:2px }
+        div{
+            display: flex;
+            justify-content: center;
+            span{ padding: 5px; }
+        }
+    }
+    
+}

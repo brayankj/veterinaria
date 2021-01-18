@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HeaderAuthComponent } from './header-auth/header-auth.component';
 import { FooterAuthComponent } from './footer-auth/footer-auth.component';
@@ -22,7 +23,9 @@ import { BottonOftheMenuComponent } from './botton-ofthe-menu/botton-ofthe-menu.
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

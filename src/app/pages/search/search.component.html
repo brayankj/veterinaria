@@ -1,1 +1,57 @@
-<p>search works!</p>
+<section class="container">
+    <div class="row PageSearchAll">
+        <div class="col-12"><h2>Buscando {{keyword}}</h2></div>
+        <div class="row PageSearchAll-results">
+            <div class="col-md-4">
+                <h4>Usuarios</h4>
+                <ng-container *ngIf="users.length === 0">
+                    <h6>Oops no se encontraton usuarios</h6>
+                </ng-container>
+                <div class="col-12" *ngFor="let user of users" style="padding: 15px" >
+                    <div class="card text-center">
+                        <img *ngIf="!user.google" src="{{ urlUsers + user.image }}" alt="">
+                        <img *ngIf="user.google" [src]="user.image" alt=""> 
+                        <p>{{user.names}}</p>
+                        <p>{{user.lastnames}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>Mascotas</h4>
+                <ng-container *ngIf="pets.length === 0">
+                    <h6>Oops no se encontraton mascotas</h6>
+                </ng-container>
+                <div class="col-12" *ngFor="let pet of pets" style="padding: 15px">
+                    <div class="card text-center">
+                        <img src="{{ urlPets + pet.image }}" alt="">
+                        <p>{{pet.typePet}}</p>
+                        <p>{{pet.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>Consultas</h4>
+                <ng-container *ngIf="notes.length === 0" >
+                    <h6>Oops no se encontraton notas</h6>
+                </ng-container>
+                <div class="col-12" *ngFor="let note of notes" style="padding: 15px">
+                    <div class="card mycardNotes text-center">
+                        <p>Veterinario {{note.veterinary.names}}</p>
+                        <p>Cita: {{note.day}}</p>
+                        <p>Proxima Cita: {{note.nextappointment}}</p>
+                        <p>{{note.notes}}</p>
+                        <div>
+                            <p>$ {{note.price}}</p>
+                            <ng-container *ngIf="note.PaidOut; else elseTemplate">
+                                <p><span class="badge badge-success">Pagado</span></p>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <p><span class="badge badge-warning">Pendinte</span></p>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

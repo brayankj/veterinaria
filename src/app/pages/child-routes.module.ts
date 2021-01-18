@@ -14,7 +14,7 @@ const childRoutes: Routes = [
   { path: 'Profile', component: SettingsUserComponent, data: { title: 'Mi Perfil' } },
   { path: 'MyPet', component: PetsComponent, data: { title: 'Mis Mascotas' } },
   { path: 'Notes', component: NotesComponent, data: { title: 'Notas Medicas' } },
-  { path: 'Search', component: SearchComponent, data: { title: 'Buscando'} },
+  { path: 'Search/:keyword', component: SearchComponent, data: { title: 'Buscando'} },
 ]
 
 
