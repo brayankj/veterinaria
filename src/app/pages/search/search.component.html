@@ -9,6 +9,9 @@
                 </ng-container>
                 <div class="col-12" *ngFor="let user of users" style="padding: 15px" >
                     <div class="card text-center">
+                        <div class="actions">
+                            <img *ngIf="roleUser === 'ADMIN_ROLE' " (click)="deleteUser(user.id)" src="../../../assets/imgs/trash.png" alt="trash.png">
+                        </div>
                         <img *ngIf="!user.google" src="{{ urlUsers + user.image }}" alt="">
                         <img *ngIf="user.google" [src]="user.image" alt=""> 
                         <p>{{user.names}}</p>
@@ -23,6 +26,9 @@
                 </ng-container>
                 <div class="col-12" *ngFor="let pet of pets" style="padding: 15px">
                     <div class="card text-center">
+                        <div class="actions">
+                            <img *ngIf="user.role !== 'USER_ROLE' " (click)="redirectToNewNote(pet.id)" src="../../../assets/imgs/medicine.png" alt="cite.png">
+                        </div>
                         <img src="{{ urlPets + pet.image }}" alt="">
                         <p>{{pet.typePet}}</p>
                         <p>{{pet.name}}</p>
@@ -38,7 +44,7 @@
                     <div class="card mycardNotes text-center">
                         <p>Veterinario {{note.veterinary.names}}</p>
                         <p>Cita: {{note.day}}</p>
-                        <p>Proxima Cita: {{note.nextappointment}}</p>
+                        <p>Proxima Cita: {{ note.nextappointment | date: 'dd/MM/yyyy' }}</p>
                         <p>{{note.notes}}</p>
                         <div>
                             <p>$ {{note.price}}</p>
@@ -48,6 +54,10 @@
                             <ng-template #elseTemplate>
                                 <p><span class="badge badge-warning">Pendinte</span></p>
                             </ng-template>
+                        </div>
+                        <div class="btnsActionsNotes">
+                            <img (click)="deleteNote(note.id)" src="../../../assets/imgs/trash.png" alt="trash.png">
+                            <img (click)="editNote(note)" src="../../../assets/imgs/edit.png" alt="edit.png">
                         </div>
                     </div>
                 </div>

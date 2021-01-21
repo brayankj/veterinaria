@@ -1,0 +1,51 @@
+<section class="container">
+    <div class="row newNote">
+      <div class="col-12"><h2>Nueva Consulta</h2></div>
+        <div class="col-md-6 text-center" *ngIf="pet">
+            <div class="card">
+              <h4>{{pet.name}}</h4>
+              <h6>Dueño {{pet.owner.names}}</h6>
+              <p>{{pet.owner.email}}</p>
+              <img src="{{ urlPet + pet.image}}" alt="">
+            </div>
+        </div>
+
+        <div class="col-md-6 my-4">
+          <h4 class="text-center">Registrar Consulta</h4>
+            <form (ngSubmit)="createNote()" autocomplete="off" [formGroup]="noteForm">
+                <div class="form-group">
+                    <label>Consulta</label>
+                    <textarea formControlName="notes" name="" cols="30" rows="5" class="form-control"></textarea>
+                    <p class="validate text-danger" *ngIf="validateFields('notes')">Campo Obligatorio</p>
+                </div>
+                <div class="form-group">
+                    <label>Tratamiento</label>
+                    <textarea formControlName="tratatment" name="" cols="30" rows="4" class="form-control"></textarea>
+                    <p class="validate text-danger" *ngIf="validateFields('tratatment')">Campo Obligatorio</p>
+                </div>
+                <div class="form-row styleCheck mb-2">
+                    <div class="form-group col-md-6">
+                        <div class="form-group">
+                            <label>Proxima cita</label>
+                            <input formControlName="nextappointment" type="date" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Precio $</label>
+                        <input formControlName="price" type="number" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <div class="form-check">
+                            <input formControlName="PaidOut" class="form-check-input" type="checkbox" id="pagado">
+                            <label class="form-check-label" for="pagado">
+                              Pagada
+                            </label>
+                          </div>
+                    </div>
+                </div>
+                <button [disabled]="noteForm.invalid"  class="btn">Guardar Consulta</button>
+                <button (click)="redirecToHome()" class="btn btnCancel">Cancelar Consulta</button>
+              </form>
+        </div>
+    </div>
+</section>

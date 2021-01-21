@@ -34,7 +34,7 @@ export class SearchService {
         let { users, pets, notes } = resp;
         if( this._user.user.role === "USER_ROLE" ){
           users = resp.users.filter( medic => medic.role === 'MEDIC_ROLE' && medic.active == true ) 
-          notes = resp.notes.filter( myNotes => myNotes.owner === this._user.user.id )
+          notes = [];
         }
         resp.users = users;
         resp.pets = pets;

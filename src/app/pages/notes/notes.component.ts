@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../services/users.service';
+import { NotesService } from '../../services/notes.service';
 
 @Component({
   selector: 'app-notes',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesComponent implements OnInit {
 
-  constructor() { }
+  public Notes: [] = [];
+  constructor(
+    private _user: UsersService,
+    public notesService : NotesService
+  ) { }
 
   ngOnInit(): void {
+    this.notesService.getNotesUser(this._user.id).subscribe( (data:any) => this.Notes = data.notes );
   }
 
 }

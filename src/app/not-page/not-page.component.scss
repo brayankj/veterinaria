@@ -1,0 +1,36 @@
+.page404{
+    background-image: url(../../assets/imgs/cow.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    .content{
+        display: flex;
+        color: var(--darkblue);
+        flex-direction: column;
+        justify-content: center;
+        p{ 
+            border-radius: 20px;
+            background: var(--GREENLIGHT);
+            padding: 25px;
+            text-align: center;
+            margin: 0 auto;
+            width: 80%;
+        }
+        h2{ 
+            font-size: 5rem;
+            font-family: var(--DM);
+        }
+        h3{
+            font-size: 3rem;
+        }
+        button{
+            background: var(--gray-dark);
+            border-radius: 15px;
+            cursor: pointer;
+            color: var(--white);
+            padding: 10px;
+            width: 180px;
+        }
+    }
+}

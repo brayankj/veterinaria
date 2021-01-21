@@ -39,6 +39,10 @@ export class UsersService {
   public get id() : string {
     return this.user.id || '';
   }
+
+  public get role() : string {
+    return this.user.role;
+  }
   
 
   googleInit(){
@@ -136,6 +140,18 @@ export class UsersService {
         Swal.fire( { icon: 'success', title: 'Cuenta Eliminada', text: resp.msg } )
         this.logout();
         localStorage.removeItem('email');
+      }),
+      catchError( this.msgErrors ),
+    ).subscribe();
+  }
+
+  deleteOneUser( id: string ){
+    return this.http.delete( `${ baseUrl }/users/${ id }`,{
+      headers: { 'token': this.token }
+    }).pipe(
+      tap( (resp:any) => {
+        Swal.fire( { icon: 'success', title: 'Cuenta Eliminada', text: resp.msg } ),
+        this._ngZone.run( () => this._router.navigateByUrl('/Pets/Home'));
       }),
       catchError( this.msgErrors ),
     ).subscribe();
