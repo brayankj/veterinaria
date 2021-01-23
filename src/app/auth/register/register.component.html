@@ -1,9 +1,9 @@
-<div class="container login">
+<div class="container login animate__animated animate__fadeIn">
     <h3>Pets</h3>
     <button [routerLink]="['/login']" >Tengo una cuenta</button>
 </div>
 
-<section class="container">
+<section class="container animate__animated animate__fadeIn">
     <div class="row my-4 register">
         <div class="col-md-6 text-center">
             <h3>My Little Pet</h3>
@@ -14,12 +14,12 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="names">Nombres: </label>
-                      <input formControlName="names" type="text" class="form-control" id="names" placeholder="Example Karen">
+                      <input formControlName="names" type="text" class="form-control" id="names" placeholder=" Nombre ">
                       <p class="validate text-danger" *ngIf="validateFields('names')">El nombre es obligatorio</p>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="lastnames">Apellidos: </label>
-                      <input formControlName="lastnames" type="text" class="form-control" id="lastnames" placeholder="Example Torres">
+                      <input formControlName="lastnames" type="text" class="form-control" id="lastnames" placeholder="Apellido">
                       <p class="validate text-danger" *ngIf="validateFields('lastnames')">El apellido es obligatorio</p>
                     </div>
                   </div>
@@ -32,7 +32,7 @@
                     <div class="form-group col-md-8">
                         <div class="form-group">
                             <label for="Email">Correo Electronico</label>
-                            <input formControlName="email" type="email" class="form-control" id="Email" placeholder="karentorres@gmail.com">
+                            <input formControlName="email" type="email" class="form-control" id="Email" placeholder="correo@gmail.com">
                             <p class="validate text-danger" *ngIf="validateFields('email')">El correo electronico es obligatorio y debe ser valido</p>
                           </div>
                     </div>

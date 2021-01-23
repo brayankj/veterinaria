@@ -57,7 +57,7 @@
                         </div>
                         <div class="btnsActionsNotes">
                             <img (click)="deleteNote(note.id)" src="../../../assets/imgs/trash.png" alt="trash.png">
-                            <img (click)="editNote(note)" src="../../../assets/imgs/edit.png" alt="edit.png">
+                            <img (click)="openModalNote(note)" src="../../../assets/imgs/edit.png" alt="edit.png">
                         </div>
                     </div>
                 </div>
@@ -65,3 +65,6 @@
         </div>
     </div>
 </section>
+
+
+<app-modal-form-note></app-modal-form-note>

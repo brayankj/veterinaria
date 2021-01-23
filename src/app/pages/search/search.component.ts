@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from '../../services/search.service';
 import { UsersService } from '../../services/users.service';
 import { NotesService } from '../../services/notes.service';
+import { ModalPetsService } from '../../services/modal-pets.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -27,6 +28,7 @@ export class SearchComponent implements OnInit {
     public searchService : SearchService,
     private _router : Router,
     private _notesService : NotesService,
+    private _modal: ModalPetsService,
   ) { }
 
   ngOnInit(): void {
@@ -89,8 +91,9 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  editNote(data){
-    console.log(data);
+  openModalNote(note){
+    this._modal.openModalNotes();
+    this._modal.dataModalNote.emit(note);
   }
 
 }

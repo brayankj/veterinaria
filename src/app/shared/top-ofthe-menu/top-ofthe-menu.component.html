@@ -10,6 +10,7 @@
                   <p class="text-center">Email: {{ user.email }} </p>
                   <a class="dropdown-item" routerLink="./Profile" routerLinkActive="active" >Editar Perfil</a>
                   <a class="dropdown-item" routerLink="./Home" routerLinkActive="active" >Agregar Mascota</a>
+                  <a *ngIf="user.role === 'ADMIN_ROLE' " class="dropdown-item" routerLink="/Pets/Comentarios" routerLinkActive="active" >Ver Comentarios</a>
                   <a class="dropdown-item" (click)="logout()" >Cerrar Sesión</a>
                 </div>
               </div>

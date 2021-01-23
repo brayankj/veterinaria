@@ -1,18 +1,20 @@
-<div class="container my-5 footer">
+<div class="container my-5 footer animate__animated animate__fadeIn">
     <div class="row">
         <div class="col-md-6">
             <h4>¿Como puedo ayudarte?</h4>
             <p>Tienes alguna duda o comentario sobre tu mascota o nuestros serviciós. escribenos y resolveremos tus dudas.</p>
-            <form>
+            <form (ngSubmit)="commentSubmit()" autocomplete="off" [formGroup]="commentForm">
                 <div class="form-group">
                     <label for="email">Correo Electronico</label>
-                    <input type="email" class="form-control" id="email"  placeholder="example@gmail.com">
+                    <input formControlName="email" type="email" class="form-control" id="email"  placeholder="Tucorreo@gmail.com">
+                    <p class="validate text-danger" *ngIf="validateFields('email')">El correo electronico es obligatorio y debe ser valido</p>
                   </div>
                   <div class="form-group">
                     <label for="texts">Comentarios</label>
-                    <textarea class="form-control" id="texts" rows="3"></textarea>
+                    <textarea formControlName="comment" class="form-control" id="texts" rows="3" placeholder="Tienes alguna duda o comentario registra un correo con tu duda y estaremos en contacto"></textarea>
+                    <p class="validate text-danger" *ngIf="validateFields('comment')">El campo es obligatorio</p>
                   </div>
-                  <button type="submit" class="btn">Enviar</button>
+                  <button [disabled]="commentForm.invalid" type="submit" class="btn">Enviar</button>
             </form>
         </div>
         <div class="col-md-6 text-center">

@@ -1,6 +1,6 @@
-<section class="container">
+<section class="container animate__animated animate__fadeIn">
     <div class="row newNote">
-      <div class="col-12"><h2>Nueva Consulta</h2></div>
+      <div class="col-12 animate__animated animate__fadeIn"><h2>Nueva Consulta</h2></div>
         <div class="col-md-6 text-center" *ngIf="pet">
             <div class="card">
               <h4>{{pet.name}}</h4>
@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="col-md-6 my-4">
+        <div class="col-md-6 my-4 animate__animated animate__fadeIn">
           <h4 class="text-center">Registrar Consulta</h4>
             <form (ngSubmit)="createNote()" autocomplete="off" [formGroup]="noteForm">
                 <div class="form-group">
@@ -20,8 +20,8 @@
                 </div>
                 <div class="form-group">
                     <label>Tratamiento</label>
-                    <textarea formControlName="tratatment" name="" cols="30" rows="4" class="form-control"></textarea>
-                    <p class="validate text-danger" *ngIf="validateFields('tratatment')">Campo Obligatorio</p>
+                    <textarea formControlName="treatment" name="" cols="30" rows="4" class="form-control"></textarea>
+                    <p class="validate text-danger" *ngIf="validateFields('treatment')">Campo Obligatorio</p>
                 </div>
                 <div class="form-row styleCheck mb-2">
                     <div class="form-group col-md-6">

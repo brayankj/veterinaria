@@ -1,0 +1,68 @@
+<div class=" animated fadeIn fast MyModalNotes" [class.oculto]="modalPetsService.hidenModalNote" >
+
+    <div class="modal fade show"
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="exampleModalLabel1" 
+        style="display: block;">
+
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Actualizar Nota</h4>
+                <button type="button" 
+                        class="close" 
+                        data-dismiss="modal" 
+                        aria-label="Close"
+                        (click)="closeModal()">
+                        <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+               
+                <form autocomplete="off" [formGroup]="noteFormUpdte" >
+                    <div class="form-group">
+                        <label>Consulta</label>
+                        <textarea formControlName="notes" name="" cols="30" rows="5" class="form-control"></textarea>
+                        <p class="validate text-danger" *ngIf="validateFields('notes')">Campo Obligatorio</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Tratamiento</label>
+                        <textarea formControlName="treatment" name="" cols="30" rows="4" class="form-control"></textarea>
+                        <p class="validate text-danger" *ngIf="validateFields('treatment')">Campo Obligatorio</p>
+                    </div>
+                    <div class="form-row styleCheck mb-2">
+                        <div class="form-group col-md-6">
+                            <div class="form-group">
+                                <label>Proxima cita</label>
+                                <input formControlName="nextappointment" type="date" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Precio $</label>
+                            <input formControlName="price" type="number" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <div class="form-check">
+                                <input formControlName="PaidOut" class="form-check-input" type="checkbox">
+                                <br>
+                                <label class="form-check-label">
+                                Pagada
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btnOne" data-dismiss="modal" (click)="closeModal()">
+                    Cancelar
+                </button>
+                <button [disabled]="noteFormUpdte.invalid" type="button" class="btn btnTwo" (click)="updateNote()"> Actualizar Consulta </button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

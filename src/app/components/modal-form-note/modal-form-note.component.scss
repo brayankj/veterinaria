@@ -1,9 +1,8 @@
-
 .oculto{
     display: none;
 }
 
-.MyModalPets{
+.MyModalNotes{
     background-color: rgba(0,0,0,.4);
     left: 0;
     height: 100%;
@@ -12,7 +11,9 @@
     width: 100%;
     z-index: 9;
     
-
+    .modal{
+        overflow: auto !important;
+    }
     .modal-content{
         background-color: var(--darkBlue) !important;
         .modal-header{
@@ -43,6 +44,13 @@
             color: var(--white);
             text-align: center;
             width: 100%;
+        }
+        .form-check{
+            margin-top: 25px;
+            label{
+                padding-top: 0px;
+                margin-top: 0px;
+            }
         }
     }
 }

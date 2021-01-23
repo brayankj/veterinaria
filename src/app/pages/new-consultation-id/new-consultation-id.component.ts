@@ -44,7 +44,7 @@ export class NewConsultationIdComponent implements OnInit {
       pet: [ idPet , Validators.required ],
       owner: [ idPet , Validators.required ],
       notes: [ '' , Validators.required ],
-      tratatment: [ '' , Validators.required ],
+      treatment: [ '' , Validators.required ],
       nextappointment: [ '' , Validators.required ],
       price: [ '' , Validators.required ],
       PaidOut: [ false ],

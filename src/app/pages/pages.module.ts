@@ -12,7 +12,8 @@ import { SettingsUserComponent } from './settings-user/settings-user.component';
 import { SearchComponent } from './search/search.component';
 import { PetsComponent } from './pets/pets.component';
 import { NotesComponent } from './notes/notes.component';
-import { NewConsultationIdComponent } from './new-consultation-id/new-consultation-id.component'
+import { NewConsultationIdComponent } from './new-consultation-id/new-consultation-id.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NewConsultationIdComponent } from './new-consultation-id/new-consultati
     PetsComponent,
     NotesComponent,
     NewConsultationIdComponent,
+    CommentsComponent
   ],
   exports: [
     PagesComponent,

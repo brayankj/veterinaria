@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row PagePets">
+    <div class="row PagePets animate__animated animate__fadeIn">
         <div class="col-12"><h2>Mis Mascotas</h2></div>
         <app-card-pet  [Pet]="item" class="col-md-6" *ngFor="let item of myPets" >
             {{item}}
@@ -7,5 +7,5 @@
     </div>
 </div>
 
-<app-modal-form-pet></app-modal-form-pet>
+<app-modal-form-pet class="animate__animated animate__fadeIn"></app-modal-form-pet>
  

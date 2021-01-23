@@ -1,0 +1,15 @@
+<section class="container animate__animated animate__fadeIn">
+    <div class="row Comments">
+        <div class="col-12"><h2>Comentarios</h2></div>
+        <div class="col-md-4" *ngFor="let comment of Comments" style="padding: 15px">
+            <div class="card text-center">
+                <p>email {{comment.email}}</p>
+                <p>comentario: {{comment.comment}}</p>
+                <div class="btnsActionsComment">
+                    <img (click)="deleteComment(comment.id)" src="../../../assets/imgs/trash.png" alt="trash.png">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

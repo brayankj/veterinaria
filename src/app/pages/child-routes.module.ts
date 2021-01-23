@@ -9,6 +9,7 @@ import { PetsComponent } from './pets/pets.component';
 import { NotesComponent } from './notes/notes.component';
 import { SearchComponent } from './search/search.component';
 import { NewConsultationIdComponent } from './new-consultation-id/new-consultation-id.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 const childRoutes: Routes = [
@@ -18,6 +19,7 @@ const childRoutes: Routes = [
   { path: 'Notes', component: NotesComponent, data: { title: 'Notas Medicas' } },
   { path: 'Search/:keyword', component: SearchComponent, data: { title: 'Buscando'} },
   { path: 'NewNote/:idPet', canActivate: [ RoleGuard ],  component: NewConsultationIdComponent, data: { title: 'Nueva consulta'} },
+  { path: 'Comentarios',canActivate: [ RoleGuard ], component : CommentsComponent, data: { title: 'Comentarios'} },
 ]
 
 
@@ -26,5 +28,6 @@ const childRoutes: Routes = [
       RouterModule.forChild(childRoutes),
   ],
   exports: [ RouterModule ],
+  declarations: [],
 })
 export class ChildRoutesModule { }

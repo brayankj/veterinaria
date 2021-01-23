@@ -30,10 +30,7 @@ export class SearchMedicComponent implements OnInit {
     if( keyword.length > 1 ){ 
       this.searchService.getSearch( 'users', keyword ).pipe(  
         map( resp => resp.resultado.filter( medic => medic.role === 'MEDIC_ROLE' && medic.active == true ) )  
-      ).subscribe( resp => {
-        this.doctors = resp
-        console.log(resp)
-      } );
+      ).subscribe( resp => this.doctors = resp );
     }
     return;
   }
