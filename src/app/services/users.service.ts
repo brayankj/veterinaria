@@ -65,10 +65,8 @@ export class UsersService {
       }
     } ).pipe(
       map( (res: any) => {
-        console.log(res);
         const { names, email, lastnames, active, years, image, google, role, id } = res.user;
         this.user = new User(names, email, '', lastnames, active, years, image, google, role, id);
-        console.log(this.user);
         localStorage.setItem('token', res.token);
         return true;
       }),
@@ -118,7 +116,6 @@ export class UsersService {
         'token': this.token
       }
     } ).pipe(
-      tap( x => console.log('data en tap: ', x) ),
       catchError( this.msgErrors ),
     );
     

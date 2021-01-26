@@ -45,7 +45,6 @@ export class NotesService {
   }
 
   updateNote( note: Note  ){
-    console.log(note);
     return this.http.put( `${ baseUrl }/consultations/${note.id}`, note ,{
       headers: {
         'token': this._user.token,

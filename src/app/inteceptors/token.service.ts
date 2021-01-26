@@ -21,7 +21,6 @@ export class TokenService implements HttpInterceptor {
 
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('Paso por el inteceptor');
     this.token = this._usersService.token;
     let headers;
     if ( this.token ) {
@@ -32,7 +31,6 @@ export class TokenService implements HttpInterceptor {
         headers
       });
       return next.handle( reqClone ).pipe(
-        tap( x => console.log(x) ),
         catchError( this.msgErrors )  
       );
     }else{ 
@@ -43,7 +41,6 @@ export class TokenService implements HttpInterceptor {
         headers
       });
       return next.handle( reqClone ).pipe(
-        tap( x => console.log(x) ),
         catchError( this.msgErrors )  
       );
     }
@@ -51,7 +48,6 @@ export class TokenService implements HttpInterceptor {
   }
 
   msgErrors( err: HttpErrorResponse ){
-    console.log('sucedio un error');
     //this._ngZone.run( () => this._router.navigateByUrl('/login'));
     return throwError(' Error en la peticion del componente ');
   }
