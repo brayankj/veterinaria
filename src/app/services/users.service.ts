@@ -123,7 +123,7 @@ export class UsersService {
 
   logout(){
     localStorage.removeItem('token');
-
+    location.reload();
     this.auth2.signOut().then( () => {
       this._ngZone.run( () => this._router.navigateByUrl('/login'));
     })
