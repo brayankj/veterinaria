@@ -28,7 +28,8 @@
         display: flex;
         justify-content: center;
         p{
-            font-size: 11px;
+            color: var(--PINK);
+            font-size: 14px;
             padding: 0 10px;
             margin-bottom: 0;
         }
@@ -46,8 +47,7 @@
     }
     form{
         .validate{
-            color: var(--PINK);
-            font-size: 14px;
+            font-size: 11px;
             margin-bottom: 0;
         }
         .form-group{
